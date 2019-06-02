@@ -17,26 +17,50 @@ public class ShelfLoader : MonoBehaviour
 {
     // Config parameters
     [SerializeField] GameObject shelfPlaceholder;
-    [SerializeField] private static string filePath = @"C:\Users\owena\git\AR Books\AR Books\config.txt";
+    //[SerializeField] string filePath = @"C:\Users\owena\git\AR Books\AR Books\config.txt";
 
     // Use this for initialization
     void Start ()
     {
-        ReadShelvesFile();
+        List<Bookshelf> shelves = ReadShelvesFile();
+        PlaceShelves(shelves, shelfPlaceholder);
     }
 
-    private static IList<Bookshelf> ReadShelvesFile()
+    private static List<Bookshelf> ReadShelvesFile()
     {
         using (StreamReader r = new StreamReader(@"c:\users\owena\jsonFiles\shelves.json"))
         {
             string json = r.ReadToEnd();
-            IList<Bookshelf> items = JsonConvert.DeserializeObject<Bookshelves>(json).Items;
-            Debug.Log(items.Count);
-            foreach (var item in items)
-            {
-                Debug.Log(item.Id + "\n" + item.Title);
-            }
+            List<Bookshelf> items = JsonConvert.DeserializeObject<Bookshelves>(json).Items.ToList();
+
+            //Debug.Log(items.Count);
+            //foreach (var item in items)
+            //{
+            //    Debug.Log(item.Id + "\n" + item.Title);
+            //}
+            //Debug.Log(items[1].Id + items[1].Title);
+            //Debug.Log("----------------------------");
             return items;
+        }
+    }
+
+    private static void PlaceShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder)
+    {
+        int startIndex = 9;
+        int maxShelves = 2;
+        float startLocY = 0.8f;
+
+        List<Bookshelf> tmpList = new List<Bookshelf>();
+        //List<Bookshelf> tmpList = shelves.GetRange(8, 3);
+        
+        for (int i = startIndex; i <= maxShelves; i++)
+        {
+            tmpList.Add(shelves[i]);
+        }
+
+        foreach (var item in tmpList)
+        {
+            Debug.Log(item.Id + " " + item.Title);
         }
     }
 	
