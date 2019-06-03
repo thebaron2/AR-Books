@@ -25,7 +25,7 @@ public class ShelfLoader : MonoBehaviour
     void Start ()
     {
         List<Bookshelf> shelves = ReadShelvesFile();
-        PlaceShelves(shelves, shelfPlaceholder, startIndex);
+        PlaceShelves(shelves, shelfPlaceholder, "ShelfCollection", startIndex);
     }
 
 	// Update is called once per frame
@@ -34,6 +34,13 @@ public class ShelfLoader : MonoBehaviour
 		
 	}
 
+    /// <summary>
+    /// Reads JSON file containing information about
+    /// my bookshelves.
+    /// </summary>
+    /// <returns>
+    /// A list of Bookshelves.
+    /// </returns>
     private static List<Bookshelf> ReadShelvesFile()
     {
         using (StreamReader r = new StreamReader(@"c:\users\owena\jsonFiles\shelves.json"))
@@ -51,9 +58,24 @@ public class ShelfLoader : MonoBehaviour
         }
     }
 
-    private static void PlaceShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder, int startIndex)
+    private static void PlaceShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder, string parent, int startIndex)
     {
-        //int startIndex = 3;
+        List<Bookshelf> list = RetrieveShelves(shelves, shelfPlaceholder, startIndex);
+
+        float startLocY = 0.8f;
+
+        foreach (var item in list)
+        {
+            Debug.Log(item.Id + " " + item.Title);
+            GameObject shelf = Instantiate(shelfPlaceholder, new Vector3(0f, startLocY, 2f), Quaternion.identity) as GameObject;
+
+            shelf.transform.SetParent(GameObject.Find(parent).transform);
+            startLocY -= 0.4f;
+        }
+    }
+
+    private static List<Bookshelf> RetrieveShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder, int startIndex)
+    {
         int maxShelves = 3;
         int maxNumberOfShelves = startIndex + 2;
 
@@ -66,21 +88,6 @@ public class ShelfLoader : MonoBehaviour
                 tmpList.Add(shelves[i]);
             }
         }
-
-        AddObjectToParent(tmpList, shelfPlaceholder, "ShelfCollection");
-    }
-
-    private static void AddObjectToParent(List<Bookshelf> list, GameObject shelfPlaceholder, string parent)
-    {
-        float startLocY = 0.8f;
-
-        foreach (var item in list)
-        {
-            Debug.Log(item.Id + " " + item.Title);
-            GameObject shelf = Instantiate(shelfPlaceholder, new Vector3(0f, startLocY, 2f), Quaternion.identity) as GameObject;
-
-            shelf.transform.SetParent(GameObject.Find(parent).transform);
-            startLocY -= 0.4f;
-        }
+        return tmpList;
     }
 }
