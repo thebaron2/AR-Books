@@ -11,7 +11,6 @@ using Google.Apis.Books.v1.Data;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using Newtonsoft.Json;
-using Assets.Scripts;
 using System.Linq;
 
 public class ShelfLoader : MonoBehaviour
