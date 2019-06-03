@@ -58,9 +58,25 @@ public class ShelfLoader : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Places the shelf objects on the screen.
+    /// </summary>
+    /// <param name="shelves">
+    /// A list containing all my shelves.
+    /// </param>
+    /// <param name="shelfPlaceholder">
+    /// A gameobject prefab that will contain the shelf on the screen.
+    /// </param>
+    /// <param name="parent">
+    /// A string, is the name of the empty gameobject that is to be the parent
+    /// of the shelf objects.
+    /// </param>
+    /// <param name="startIndex">
+    /// The index of the shelf that is to be at the top of the screen.
+    /// </param>
     private static void PlaceShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder, string parent, int startIndex)
     {
-        List<Bookshelf> list = RetrieveShelves(shelves, shelfPlaceholder, startIndex);
+        List<Bookshelf> list = RetrieveShelves(shelves, startIndex);
 
         float startLocY = 0.8f;
 
@@ -74,7 +90,17 @@ public class ShelfLoader : MonoBehaviour
         }
     }
 
-    private static List<Bookshelf> RetrieveShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder, int startIndex)
+    /// <summary>
+    /// Creates a smaller list containing only three shelves.
+    /// </summary>
+    /// <param name="shelves">
+    /// The list containing all shelves.
+    /// </param>
+    /// <param name="startIndex">
+    /// The index of the shelf that is to be at the top of the screen.
+    /// </param>
+    /// <returns></returns>
+    private static List<Bookshelf> RetrieveShelves(List<Bookshelf> shelves, int startIndex)
     {
         int maxShelves = 3;
         int maxNumberOfShelves = startIndex + 2;
