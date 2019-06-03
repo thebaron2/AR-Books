@@ -17,14 +17,22 @@ public class ShelfLoader : MonoBehaviour
 {
     // Config parameters
     [SerializeField] GameObject shelfPlaceholder;
+    [SerializeField] int startIndex = 0;
+
     //[SerializeField] string filePath = @"C:\Users\owena\git\AR Books\AR Books\config.txt";
 
     // Use this for initialization
     void Start ()
     {
         List<Bookshelf> shelves = ReadShelvesFile();
-        PlaceShelves(shelves, shelfPlaceholder);
+        PlaceShelves(shelves, shelfPlaceholder, startIndex);
     }
+
+	// Update is called once per frame
+	void Update ()
+    {
+		
+	}
 
     private static List<Bookshelf> ReadShelvesFile()
     {
@@ -33,40 +41,46 @@ public class ShelfLoader : MonoBehaviour
             string json = r.ReadToEnd();
             List<Bookshelf> items = JsonConvert.DeserializeObject<Bookshelves>(json).Items.ToList();
 
-            //Debug.Log(items.Count);
-            //foreach (var item in items)
-            //{
-            //    Debug.Log(item.Id + "\n" + item.Title);
-            //}
-            //Debug.Log(items[1].Id + items[1].Title);
-            //Debug.Log("----------------------------");
+            Debug.Log(items.Count);
+            foreach (var item in items)
+            {
+                Debug.Log(item.Id + "\n" + item.Title);
+            }
+            Debug.Log("----------------------------");
             return items;
         }
     }
 
-    private static void PlaceShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder)
+    private static void PlaceShelves(List<Bookshelf> shelves, GameObject shelfPlaceholder, int startIndex)
     {
-        int startIndex = 9;
-        int maxShelves = 2;
-        float startLocY = 0.8f;
+        //int startIndex = 3;
+        int maxShelves = 3;
+        int maxNumberOfShelves = startIndex + 2;
 
         List<Bookshelf> tmpList = new List<Bookshelf>();
-        //List<Bookshelf> tmpList = shelves.GetRange(8, 3);
-        
-        for (int i = startIndex; i <= maxShelves; i++)
+
+        for (int i = startIndex; i < shelves.Count; i++)
         {
-            tmpList.Add(shelves[i]);
+            if (i <= maxNumberOfShelves)
+            {
+                tmpList.Add(shelves[i]);
+            }
         }
 
-        foreach (var item in tmpList)
+        AddObjectToParent(tmpList, shelfPlaceholder, "ShelfCollection");
+    }
+
+    private static void AddObjectToParent(List<Bookshelf> list, GameObject shelfPlaceholder, string parent)
+    {
+        float startLocY = 0.8f;
+
+        foreach (var item in list)
         {
             Debug.Log(item.Id + " " + item.Title);
+            GameObject shelf = Instantiate(shelfPlaceholder, new Vector3(0f, startLocY, 2f), Quaternion.identity) as GameObject;
+
+            shelf.transform.SetParent(GameObject.Find(parent).transform);
+            startLocY -= 0.4f;
         }
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 }

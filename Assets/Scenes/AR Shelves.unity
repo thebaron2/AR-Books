@@ -166,7 +166,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1160686447495726, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224056141407609526, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
@@ -344,6 +344,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160686447495726, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}
@@ -561,7 +565,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1160686447495726, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224056141407609526, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
@@ -750,7 +754,7 @@ GameObject:
   - component: {fileID: 1403217691}
   - component: {fileID: 1403217690}
   m_Layer: 0
-  m_Name: BookCollection
+  m_Name: ShelfCollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,6 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shelfPlaceholder: {fileID: 1160686447495726, guid: 1b190f6506829324284bc9b3e45b97fb,
     type: 2}
+  startIndex: 0
 --- !u!4 &1403217691
 Transform:
   m_ObjectHideFlags: 0
