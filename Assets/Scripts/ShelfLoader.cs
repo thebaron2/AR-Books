@@ -1,15 +1,8 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System.IO;
-using System;
-
-using Google.Apis.Auth.OAuth2;
-using Google.Apis.Books.v1;
 using Google.Apis.Books.v1.Data;
-using Google.Apis.Services;
-using Google.Apis.Util.Store;
 using Newtonsoft.Json;
 using System.Linq;
 
@@ -99,7 +92,7 @@ public class ShelfLoader : MonoBehaviour
     /// </returns>
     private static List<Bookshelf> ReadShelvesFile()
     {
-        using (StreamReader r = new StreamReader(@"c:\users\owena\jsonFiles\shelves.json"))
+        using (StreamReader r = new StreamReader(new FileStream("Assets/Resources/shelves.json", FileMode.Open)))
         {
             string json = r.ReadToEnd();
             List<Bookshelf> items = JsonConvert.DeserializeObject<Bookshelves>(json).Items.ToList();
