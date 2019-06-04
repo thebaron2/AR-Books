@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1527371719237768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01, y: 0.03, z: 0.1}
+  m_LocalScale: {x: 0.01, y: 0.05, z: 0.1}
   m_Children: []
   m_Father: {fileID: 224056141407609526}
   m_RootOrder: 0
@@ -154,18 +154,14 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1527371719237768}
-  m_Text: 'Shelf Name: My Google eBooks
-
-    Volumes on shelf: 23
-
-    Last updated: 2019-05-31'
+  m_Text: "Shelf Name: \nVolumes on shelf: \nLast updated: "
   m_OffsetZ: 0
-  m_CharacterSize: 5
+  m_CharacterSize: 3
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 12
+  m_FontSize: 15
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -186,7 +182,7 @@ RectTransform:
   m_GameObject: {fileID: 1160686447495726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 0.2, z: 0.01}
+  m_LocalScale: {x: 0.7, y: 0.1, z: 0.01}
   m_Children:
   - {fileID: 4016048886847648}
   m_Father: {fileID: 0}
@@ -194,6 +190,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.8}
+  m_AnchoredPosition: {x: 0, y: 0.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
