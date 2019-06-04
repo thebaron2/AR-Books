@@ -8,9 +8,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AR Shelves.unity
     guid: f536bdd7e79d248438888af7ed80168c
-  - enabled: 1
-    path: Assets/Scenes/AR Books.unity
-    guid: 1677dd93d586dc049b4d0baf1a452760
-  - enabled: 1
-    path: Assets/Scenes/AR Book.unity
-    guid: 3ee8509cf37309d46a3e7d9dc954c1e9
