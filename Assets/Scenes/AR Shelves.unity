@@ -173,70 +173,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &535759813
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4994952039637774, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1361194358819448, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 60e5399dc5a58a94591ffbf4c637b8ee, type: 2}
-  m_IsPrefabParent: 0
---- !u!1 &535759814 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1361194358819448, guid: 60e5399dc5a58a94591ffbf4c637b8ee,
-    type: 2}
-  m_PrefabInternal: {fileID: 535759813}
---- !u!114 &535759815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535759814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3ad59f6db0a7d841a35d38e2eb22d88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &682638283
 Prefab:
   m_ObjectHideFlags: 0
@@ -338,15 +276,6 @@ Prefab:
       propertyPath: m_Name
       value: Shelf Cube (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 102409519734445792, guid: 1b190f6506829324284bc9b3e45b97fb,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Shelf Name: Reviewed
-
-        Volumes on shelf: 1
-
-        Last updated: 2019-05-31'
-      objectReference: {fileID: 0}
     - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
       propertyPath: shelfId
@@ -354,8 +283,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
+      propertyPath: name
+      value: Reviewed
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
       propertyPath: booksOnShelf
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
+      propertyPath: lastUpdated
+      value: 2019-05-31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
+      propertyPath: shelfName
+      value: Reviewed
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}
@@ -683,15 +627,6 @@ Prefab:
       propertyPath: m_Name
       value: Shelf Cube (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 102409519734445792, guid: 1b190f6506829324284bc9b3e45b97fb,
-        type: 2}
-      propertyPath: m_Text
-      value: 'Shelf Name: Purchased
-
-        Volumes on shelf: 2
-
-        Last updated: 2019-05-31'
-      objectReference: {fileID: 0}
     - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
       propertyPath: shelfId
@@ -699,8 +634,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
+      propertyPath: name
+      value: Purchased
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
       propertyPath: booksOnShelf
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
+      propertyPath: lastUpdated
+      value: 2019-05-31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
+      propertyPath: shelfName
+      value: Purchased
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}
@@ -742,7 +692,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012659030676, guid: 87596db941ad3bf45a16b586b6e28b5c, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114000011744501634, guid: 87596db941ad3bf45a16b586b6e28b5c,
         type: 2}
@@ -756,48 +706,6 @@ Prefab:
       objectReference: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87596db941ad3bf45a16b586b6e28b5c, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1610449047
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4360400905110362, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b2ddfbf9d184fbe4a8abc618669d154e, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1831029930
 Prefab:
@@ -836,7 +744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 470424, guid: 08e4d00bf30754a4dbab83114f32bbb0, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 470424, guid: 08e4d00bf30754a4dbab83114f32bbb0, type: 2}
       propertyPath: m_LocalScale.y
@@ -858,6 +766,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c76a3fe4ec50824f9c31af32fdd08e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1926006352 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1962926541263200, guid: 1652b8e18afd55a40a8670e9fe17d383,
+    type: 2}
+  m_PrefabInternal: {fileID: 1190085468}
+--- !u!114 &1926006353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926006352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a3ab8fd408f75641b2f5009c5001a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2101240254
@@ -959,22 +883,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
-      propertyPath: shelfId
-      value: 1
+      propertyPath: name
+      value: My Google eBooks
       objectReference: {fileID: 0}
     - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
       propertyPath: booksOnShelf
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 102409519734445792, guid: 1b190f6506829324284bc9b3e45b97fb,
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
         type: 2}
-      propertyPath: m_Text
-      value: 'Shelf Name: My Google eBooks
-
-        Volumes on shelf: 3
-
-        Last updated: 2019-05-31'
+      propertyPath: shelfId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
+      propertyPath: lastUpdated
+      value: 2019-05-31
+      objectReference: {fileID: 0}
+    - target: {fileID: 114855435595943050, guid: 1b190f6506829324284bc9b3e45b97fb,
+        type: 2}
+      propertyPath: shelfName
+      value: My Google eBooks
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b190f6506829324284bc9b3e45b97fb, type: 2}

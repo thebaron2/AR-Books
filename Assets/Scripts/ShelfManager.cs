@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShelfManager : MonoBehaviour {
 
     [SerializeField] int shelfId;
-    [SerializeField] string name;
+    [SerializeField] string shelfName;
     [SerializeField] int booksOnShelf;
     [SerializeField] string lastUpdated;
 
@@ -13,7 +13,7 @@ public class ShelfManager : MonoBehaviour {
     void Start ()
     {
         var tm = gameObject.GetComponentInChildren<TextMesh>();
-        tm.text = "Shelf name: " + name + "\n" +
+        tm.text = "Shelf name: " + shelfName + "\n" +
             "Volumes on shelf: " + booksOnShelf + "\n" +
             "Last updated: " + lastUpdated;
     }
@@ -27,10 +27,13 @@ public class ShelfManager : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
+            Dictionary<string, string> info = new Dictionary<string, string>()
+            {
+                { "Shelf", shelfId.ToString() },
+                { "VolumesOnShelf", booksOnShelf.ToString() }
+            };
             Debug.Log("Pressed on shelf with ID: " + shelfId);
-            //GameObject parent = transform.parent.gameObject;
-            //parent.SetActive(false);
-            SceneLoader.LoadNextScene();
+            Scenes.Load("AR Books", info);
         }
     }
 }
