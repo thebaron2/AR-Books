@@ -44,9 +44,17 @@ public class BookManager : MonoBehaviour {
             } 
         }
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    //private void OnMouseOver()
+    //{
+    //    if (Input.GetMouseButtonDown(0))
+    //    {
+
+    //    }
+    //}
+
+    // Update is called once per frame
+    void Update ()
     {
 		
 	}

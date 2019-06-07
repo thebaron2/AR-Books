@@ -6,7 +6,7 @@ public class Commands : MonoBehaviour
 {
     void OnSelect()
     {
-        if (this.GetComponent<BoxCollider>())
+        if (GetComponent<BoxCollider>())
         {
             Debug.Log("Test");
             //SceneLoader.LoadNextScene();
