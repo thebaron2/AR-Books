@@ -9,25 +9,25 @@ public class BookManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        // Creating 3 books
         Book book1 = new Book("A Dance with Dragons", "A Song of Ice and Fire: Book Five", "George R. R. Martin", 1040);
         Book book2 = new Book("The Lady of the Lake", "", "Andrzej Sapkowski", 544);
         Book book3 = new Book("The Tower of the Swallow", "", "Andrzej Sapkowski", 400);
 
+        // Retrieve the parameters that were send when switching scenes.
         Dictionary<string, string> info = Scenes.getSceneParameters();
-        foreach (KeyValuePair<string, string> y in info){
-            Debug.Log(y.Key + " " + y.Value);
-        }
 
         if (info["VolumesOnShelf"] != 0.ToString())
         {
             int numberOfBooks = 0;
             
+            // Instantiate bookobjects if VolumesOnShelf is not 0;
             if (Int32.TryParse(info["VolumesOnShelf"], out numberOfBooks))
             {
                 float xStart = -0.5f;
                 Book[] books = { book1, book2, book3 };
                 int bookIndex = 0;
-                // TODO: Update so it only spawns a max of 3 bookObjects.
+                // TODO: Update loop so it only spawns a max of 3 bookObjects.
                 for (int i = 0; i < numberOfBooks; i++)
                 {
                     GameObject bookHolder = Instantiate(bookPlaceholder, new Vector3(xStart, 0f, 2f), Quaternion.identity) as GameObject;

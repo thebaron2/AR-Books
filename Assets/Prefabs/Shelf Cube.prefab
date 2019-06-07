@@ -24,10 +24,10 @@ GameObject:
   - component: {fileID: 23874285808924284}
   - component: {fileID: 222129336975375504}
   - component: {fileID: 114855435595943050}
-  - component: {fileID: 114846514941793278}
+  - component: {fileID: 114177752845092652}
   m_Layer: 0
   m_Name: Shelf Cube
-  m_TagString: Untagged
+  m_TagString: ShelfHolder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
---- !u!114 &114846514941793278
+--- !u!114 &114177752845092652
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

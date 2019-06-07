@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 33586521295753340}
   - component: {fileID: 65271430669783158}
   - component: {fileID: 23406904615208858}
+  - component: {fileID: 114282397689423342}
+  - component: {fileID: 114906045297235708}
   m_Layer: 0
   m_Name: BackButton
   m_TagString: BackButton
@@ -181,3 +183,25 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &114282397689423342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953578876064254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a5c8ea599c8044782f9bca618beb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114906045297235708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1953578876064254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b53272883c7b64ab37f3ab19c1a1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

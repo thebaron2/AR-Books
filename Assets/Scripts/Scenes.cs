@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// A class that enables passing parameters when switching scenes.
+/// </summary>
 public class Scenes : MonoBehaviour
 {
     private static Dictionary<string, string> parameters;

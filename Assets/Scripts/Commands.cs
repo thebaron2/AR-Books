@@ -6,10 +6,20 @@ public class Commands : MonoBehaviour
 {
     void OnSelect()
     {
-        if (GetComponent<BoxCollider>())
+        if (gameObject.tag == "ShelfHolder")
         {
-            Debug.Log("Test");
-            //SceneLoader.LoadNextScene();
+            var component = gameObject.GetComponent<ShelfManager>();
+
+            Dictionary<string, string> info = new Dictionary<string, string>()
+            {
+                { "Shelf", component.shelfId.ToString() },
+                { "VolumesOnShelf", component.booksOnShelf.ToString() }
+            };
+            Scenes.Load("AR Books", info);
+        }
+        else if (gameObject.tag == "BackButton")
+        {
+            Scenes.Load("AR Shelves");
         }
     }
 }

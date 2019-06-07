@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ShelfManager : MonoBehaviour {
 
-    [SerializeField] int shelfId;
-    [SerializeField] string shelfName;
-    [SerializeField] int booksOnShelf;
-    [SerializeField] string lastUpdated;
+    [SerializeField] public int shelfId;
+    [SerializeField] public string shelfName;
+    [SerializeField] public int booksOnShelf;
+    [SerializeField] public string lastUpdated;
 
     // Use this for initialization
     void Start ()
@@ -19,7 +19,8 @@ public class ShelfManager : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
@@ -32,7 +33,7 @@ public class ShelfManager : MonoBehaviour {
                 { "Shelf", shelfId.ToString() },
                 { "VolumesOnShelf", booksOnShelf.ToString() }
             };
-            Debug.Log("Pressed on shelf with ID: " + shelfId);
+            //Debug.Log("Pressed on shelf with ID: " + shelfId);
             Scenes.Load("AR Books", info);
         }
     }
