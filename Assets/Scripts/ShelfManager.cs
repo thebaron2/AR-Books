@@ -33,7 +33,6 @@ public class ShelfManager : MonoBehaviour {
                 { "Shelf", shelfId.ToString() },
                 { "VolumesOnShelf", booksOnShelf.ToString() }
             };
-            //Debug.Log("Pressed on shelf with ID: " + shelfId);
             Scenes.Load("AR Books", info);
         }
     }

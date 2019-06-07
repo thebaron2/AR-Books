@@ -30,10 +30,14 @@ public class BookManager : MonoBehaviour {
                 // TODO: Update loop so it only spawns a max of 3 bookObjects.
                 for (int i = 0; i < numberOfBooks; i++)
                 {
+                    // Instantiates the object with a start location (the object is a prefab)
                     GameObject bookHolder = Instantiate(bookPlaceholder, new Vector3(xStart, 0f, 2f), Quaternion.identity) as GameObject;
+                    // Places the instantiated object in the parent BookCollection
                     bookHolder.transform.parent = GameObject.Find("BookCollection").transform;
 
+                    //Retrieve the TextMesh component from the instantiated object
                     TextMesh text = bookHolder.GetComponentInChildren<TextMesh>();
+                    // Change the text in the object
                     text.text = "Title:\n" + books[bookIndex].Title + "\n\n" +
                         "Author:\n" + books[bookIndex].Author + "\n\n" +
                         "Page count:\n" + books[bookIndex].PageCount;
@@ -45,14 +49,6 @@ public class BookManager : MonoBehaviour {
         }
 	}
 
-    //private void OnMouseOver()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-
-    //    }
-    //}
-
     // Update is called once per frame
     void Update ()
     {
@@ -60,6 +56,9 @@ public class BookManager : MonoBehaviour {
 	}
 }
 
+/// <summary>
+/// An object to represent a book, since the API's datatype can't be used.
+/// </summary>
 public class Book
 {
     public string Title { get; set; }
