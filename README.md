@@ -32,6 +32,7 @@ Unity:
 6. When Unity is done, open the Visual Studio solution that is in the `App` folder.
 
 Visual Studio:
+
 In the top toolbar in Visual Studio, change the target from `Debug` to `Release` and from `ARM` to `X86`.
 
 When deploying over WIFI:
@@ -45,25 +46,32 @@ When deploying over USB:
 1. Change `Local Machine` to `Device`.
 2. Click `Debug > Start without debugging`.
 
-## How it works
-During development it was decided to add an extra step between opening and reading, and that was opening a shelf. 
-After a shelf was opened, the user would be able to open a book, and start reading.
-So first a user's shelves had to be loaded in, then the books on that shelf and then the actual book.
 
-This is where problems started to arise. At first the Unity project and the Google Books API wouldn't work together. 
-As a workaround it was decided to create a [Console app][5] that calls the API, and stores the data in a JSON file, 
-which the Unity project should be able to read. 
-Unfortunately, this wasn't the case either, since the API's datatypes were required. 
-This setback did result in a fix for the previous problem, since all that was required for Unity to be able to work with the API, was that the `.dll` files had to be in the Assets folder in Unity. So now it was possible to read the `JSON` files and load in the data. 
-This was done in the script `ShelfLoader.cs` (located in the `scripts` folder inside the `Assets` folder). 
+## The Plan
+The idea was that shelf information would be loaded in from the Books API, this didn't work with Unity though. A workaround was a seperate project called [Books API][5], which called the API and stored the data in JSON files. This project would then read these files and display the information. This code worked in Unity, but couldn't be build. 
 
-This script worked fine in Unity, until you started building it for the Hololens. Then the build process fails
-and throws a bunch of reference rewriter errors. Unfortunately a fix for this problem couldn't be found.
+Because of that, it was decided to add 3 shelves manually.
 
+The next step would have been to click on a shelf and see the books on that shelf. Originally this also would have come either directly from the API or from the JSON files. Since this didn't work, it was decided to manually create 3 books, put them in an array, and load either all, 2, or 1 of the books, dependant on the number of books on a shelf. 
+
+In Unity, the loading of the books worked fine, but when building and deploying on the HoloLens, the cursor is unable to click on a shelf to load the books on that shelf. I have been unable to fix this problem. It might have to do with the code that allows parameters to be passed, but it could also be a HoloLens issue.
+
+The plan would have been to be able to click on a book, and read it. Unfortunately, the reading part requires a seperate API, [Embedded Viewer API][6], which needs Javascript and only shows a preview, not the entire book. Since it requires Javascript, I decided to not use this API, and instead of reading, show more information about the book. Unfortunately I have not been able to get this far.
+
+## Problems that arose
+The problems that arose in order of occurence:
+* Couldnt get the Unity project (with C# Scripting code) to call the API. 
+_Fix/Workaround:_ Decided to use a seperate project to call the API and have it stored in JSON files. Eventually figured out how to get the API call to work, needed the `.dll` files of the nuget packages in the `Asset` folder in Unity.
+* Unity stops responding when entering play mode using code that calls the API. This doesn't occur when using code that read from JSON file (still needed API datatypes when reading file), decided to keep using file reading.
+* Had build errors when building Unity project that had references (`.dll` files) to the Books API and Newtonsoft (installed with API, for reading JSON files) Tried this [potential solution][7], but couldn't get it to work. Decided on adding shelf and book information manually.
+* Needed a way of switching to the next scene that allowed for parameters to pe bassed to the next scene (to know how many books were on the shelf that was clicked on). Used [flashmandv's][8] answer which allows this parameter passing when switching scenes.
 
 
 [1]: https://developers.google.com/books/docs/overview
 [2]: https://docs.microsoft.com/en-us/windows/mixed-reality/install-the-tools
 [3]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-100#chapter-1---create-a-new-project
 [4]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101#chapter-1---holo-world
-[5]: *add link to repo*
+[5]: https://github.com/thebaron2/BooksAPI
+[6]: https://developers.google.com/books/docs/viewer/developers_guide
+[7]: https://stackoverflow.com/questions/52868572/failed-to-run-reference-rewriter-with-command-error-with-unity-error-when-adding
+[8]: https://forum.unity.com/threads/unity-beginner-loadlevel-with-arguments.180925/
