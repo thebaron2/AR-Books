@@ -1,5 +1,5 @@
 # AR-Books
-This application is for reading books using the Hololens 1.
+This application is for reading books using the Hololens (1st gen).
 
 The idea behind this project was that instead of reading books on your phone, or with a paperback in your hand, 
 you put on a pair of glasses (or in this case a Hololens), select a book, and start reading. 
@@ -61,10 +61,24 @@ The plan would have been to be able to click on a book, and read it. Unfortunate
 ## Problems that arose
 The problems that arose in order of occurence:
 * Couldnt get the Unity project (with C# Scripting code) to call the API. 
-_Fix/Workaround:_ Decided to use a seperate project to call the API and have it stored in JSON files. Eventually figured out how to get the API call to work, needed the `.dll` files of the nuget packages in the `Asset` folder in Unity.
+_Fix/Workaround:_ Decided to use a seperate project to call the API and have it stored in JSON files. This project is called [Books API][5]. Eventually figured out how to get the API call to work, needed the `.dll` files of the nuget packages in the `Asset` folder in Unity.
 * Unity stops responding when entering play mode using code that calls the API. This doesn't occur when using code that read from JSON file (still needed API datatypes when reading file), decided to keep using file reading.
 * Had build errors when building Unity project that had references (`.dll` files) to the Books API and Newtonsoft (installed with API, for reading JSON files) Tried this [potential solution][7], but couldn't get it to work. Decided on adding shelf and book information manually.
-* Needed a way of switching to the next scene that allowed for parameters to pe bassed to the next scene (to know how many books were on the shelf that was clicked on). Used [flashmandv's][8] answer which allows this parameter passing when switching scenes.
+* Needed a way of switching to the next scene that allowed for parameters to pe bassed to the next scene (to know how many books were on the shelf that was clicked on). _Fix:_ Used [flashmandv's][8] answer which allows this parameter passing when switching scenes.
+* The cursor that was added to be able to click on a shelf didn't show. First tried this [Tutorial by Microsoft][9], but that didn't work in this project. _Fix:_ Followed this [Tutorial/guide][10], and managed to get it to show.
+* Tried to add the select gesture to be able to click on a shelf by following this [Tutorial by Microsoft][11] multiple times, but couldn't get it to work. Eventually tried this [Guide][12], but coulnd't get that work either. I have yet been unable to fix this problem.
+
+## Improvements and expansion options
+Stuff that can be added or improved to get this project working
+* Fix or find a workaround for the gesture problem to allow switching scene on the HoloLens.
+* Manually create datatypes that mimmick the API's datatypes. This way file reading might work on the HoloLens and the problem of manually adding shelves and books is fixed.
+* Add an animation that shows the next couple of shelves, since 3 shelves has the right size according to testers
+* Add a similair animation for showing the next couple of books on a shelf.
+* Show specific information about 1 book, after selecting a shelf and a book on that shelf.
+* Add an animation to go to the next book when showing details on 1 book.
+
+
+
 
 
 [1]: https://developers.google.com/books/docs/overview
@@ -75,3 +89,7 @@ _Fix/Workaround:_ Decided to use a seperate project to call the API and have it 
 [6]: https://developers.google.com/books/docs/viewer/developers_guide
 [7]: https://stackoverflow.com/questions/52868572/failed-to-run-reference-rewriter-with-command-error-with-unity-error-when-adding
 [8]: https://forum.unity.com/threads/unity-beginner-loadlevel-with-arguments.180925/
+[9]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101#chapter-2---gaze
+[10]: https://abhijitjana.net/2016/05/19/adding-a-gaze-input-cursor-to-your-unity-3d-holographic-app/
+[11]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101#chapter-3---gestures
+[12]: https://abhijitjana.net/2016/05/29/understanding-the-gesture-and-adding-air-tap-gesture-into-your-unity-3d-holographic-app/
