@@ -61,12 +61,12 @@ The plan would have been to be able to click on a book, and read it. Unfortunate
 ## Problems that arose
 The problems that arose in order of occurence:
 * Couldnt get the Unity project (with C# Scripting code) to call the API. 
-_Fix/Workaround:_ Decided to use a seperate project to call the API and have it stored in JSON files. This project is called [Books API][5]. Eventually figured out how to get the API call to work, needed the `.dll` files of the nuget packages in the `Asset` folder in Unity.
-* Unity stops responding when entering play mode using code that calls the API. This doesn't occur when using code that read from JSON file (still needed API datatypes when reading file), decided to keep using file reading.
-* Had build errors when building Unity project that had references (`.dll` files) to the Books API and Newtonsoft (installed with API, for reading JSON files) Tried this [potential solution][7], but couldn't get it to work. Decided on adding shelf and book information manually.
-* Needed a way of switching to the next scene that allowed for parameters to pe bassed to the next scene (to know how many books were on the shelf that was clicked on). _Fix:_ Used [flashmandv's][8] answer which allows this parameter passing when switching scenes.
-* The cursor that was added to be able to click on a shelf didn't show. First tried this [Tutorial by Microsoft][9], but that didn't work in this project. _Fix:_ Followed this [Tutorial/guide][10], and managed to get it to show.
-* Tried to add the select gesture to be able to click on a shelf by following this [Tutorial by Microsoft][11] multiple times, but couldn't get it to work. Eventually tried this [Guide][12], but coulnd't get that work either. I have yet been unable to fix this problem.
+_**Workaround:**_ Decided to use a seperate project to call the API and have it stored in JSON files. This project is called [Books API][5]. _**Fix:**_ Eventually figured out how to get the API call to work, needed the `.dll` files of the nuget packages in the `Asset` folder in Unity.
+* Unity stops responding when entering play mode using code that calls the API. This doesn't occur when using code that read from JSON file (still needed API datatypes when reading file), _**Workaround:**_ so I decided to keep using file reading.
+* Had build errors when building Unity project that had references (`.dll` files) to the Books API and Newtonsoft (installed with API, for reading JSON files) Tried this [potential solution][7], but couldn't get it to work. _**Workaround:**_ Decided on adding shelf and book information manually.
+* Needed a way of switching to the next scene that allowed for parameters to pe bassed to the next scene (to know how many books were on the shelf that was clicked on). _**Fix:**_ Used [flashmandv's][8] answer which allows this parameter passing when switching scenes.
+* The cursor that was added to be able to click on a shelf didn't show. First tried this [Tutorial by Microsoft][9], but that didn't work in this project. _**Fix:**_ Followed this [Tutorial/guide][10], and managed to get it to show.
+* Tried to add the select gesture to be able to click on a shelf by following this [Tutorial by Microsoft][11] multiple times, but couldn't get it to work. Eventually tried this [Guide][12] a couple of times, but coulnd't get that to work either. As of yet, I have been unable to fix this problem.
 
 ## Improvements and expansion options
 Stuff that can be added or improved to get this project working
