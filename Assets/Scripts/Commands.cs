@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Commands : MonoBehaviour
 {
+    // TODO: fix gaze and select gesture, doesn't work!
     void OnSelect()
     {
         // Check the gameObject's tag

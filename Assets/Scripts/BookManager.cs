@@ -17,6 +17,8 @@ public class BookManager : MonoBehaviour {
         // Retrieve the parameters that were send when switching scenes.
         Dictionary<string, string> info = Scenes.getSceneParameters();
 
+        // Check if there is atleast 1 volume on the shelf.
+        // Easier to convert to string than to int.
         if (info["VolumesOnShelf"] != 0.ToString())
         {
             int numberOfBooks = 0;
@@ -47,12 +49,6 @@ public class BookManager : MonoBehaviour {
                 }
             } 
         }
-	}
-
-    // Update is called once per frame
-    void Update ()
-    {
-		
 	}
 }
 
