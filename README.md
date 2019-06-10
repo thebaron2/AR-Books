@@ -23,7 +23,12 @@ For some extra documentation regarding gaze, geztures, audio and spatial mapping
 Only gaze was attempted in this project.
 
 ## Build instructions
-In Unity:
+1. In Unity go to `File > Build Settings`
+2. Click `Add Open Scenes`
+3. Change platform to `Universal Windows Platform` if it isn't on that already.
+4. Check that the build settings correspond with the image below:
+![Build_settings][build_settings]
+
 *Add build settings instructions*
 
 ## How it works
@@ -48,3 +53,5 @@ and throws a bunch of reference rewriter errors. Unfortunately a fix for this pr
 [3]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-100#chapter-1---create-a-new-project
 [4]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101#chapter-1---holo-world
 [5]: *add link to repo*
+
+[build_settings]: https://github.com/thebaron2/AR-Books/Build Settings.png "Build Settings"
