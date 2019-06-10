@@ -15,7 +15,7 @@ public class BookManager : MonoBehaviour {
         Book book3 = new Book("The Tower of the Swallow", "", "Andrzej Sapkowski", 400);
 
         // Retrieve the parameters that were send when switching scenes.
-        Dictionary<string, string> info = Scenes.getSceneParameters();
+        Dictionary<string, string> info = Scenes.GetSceneParameters();
 
         // Check if there is atleast 1 volume on the shelf.
         // Easier to convert to string than to int.
