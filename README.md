@@ -22,14 +22,28 @@ Before you start, please take some time to follow [this guide][3] to get used to
 For some extra documentation regarding gaze, geztures, audio and spatial mapping for the Hololens, use [this guide][4]. 
 Only gaze was attempted in this project.
 
-## Build instructions
+## Build and deploy instructions
+Unity:
 1. In Unity go to `File > Build Settings`
 2. Click `Add Open Scenes`
 3. Change platform to `Universal Windows Platform` if it isn't on that already.
-4. Check that the build settings correspond with the image below:
-![Build_settings][build_settings]
+4. Check that the build settings correspond with the image called `Build_Settings` that is in this repo.
+5. Click Build, and select the `App` folder. If this folder doesn't exist create a new folder called `App`.
+6. When Unity is done, open the Visual Studio solution that is in the `App` folder.
 
-*Add build settings instructions*
+Visual Studio:
+In the top toolbar in Visual Studio, change the target from `Debug` to `Release` and from `ARM` to `X86`.
+
+When deploying over WIFI:
+(make sure the hololens and the development machine are on the same network)
+1. Click on the arrow next to `Local Machine`, and change it to `Remote Machine`.
+2. Enter the IP adress of the Hololens and change authentication mode to `Universal (Unencrypted Protocol`.
+(IP of HoloLens can be found by asking Cortana: "What's my IP adress?")
+3. Click `Debug > Start without debugging`
+
+When deploying over USB:
+1. Change `Local Machine` to `Device`.
+2. Click `Debug > Start without debugging`.
 
 ## How it works
 During development it was decided to add an extra step between opening and reading, and that was opening a shelf. 
@@ -53,5 +67,3 @@ and throws a bunch of reference rewriter errors. Unfortunately a fix for this pr
 [3]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-100#chapter-1---create-a-new-project
 [4]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101#chapter-1---holo-world
 [5]: *add link to repo*
-
-[build_settings]: https://github.com/thebaron2/AR-Books/Build Settings.png "Build Settings"
