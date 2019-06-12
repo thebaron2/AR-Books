@@ -5,6 +5,10 @@ The idea behind this project was that instead of reading books on your phone, or
 you put on a pair of glasses (or in this case a Hololens), select a book, and start reading. 
 The application would use the [Google Books API][1] to retrieve your books so you could start reading.
 
+This project was done in a semi-SCRUM way, since it was a solo project. 
+
+A [Trello board][13] was used to keep track of what had to be done. This board will have the roughly same information that is in the sections ['The Plan'](#the-plan) and ['Problems that arose'](#problems-that-arose), the difference being the date and time a problem arose and when a fix or workaround was found, including a link were applicable.
+
 ## Setup
 In order to start working on this project, the following things have to be installed:
 * Windows 10
@@ -54,7 +58,7 @@ Because of that, it was decided to add 3 shelves manually.
 
 The next step would have been to click on a shelf and see the books on that shelf. Originally this also would have come either directly from the API or from the JSON files. Since this didn't work, it was decided to manually create 3 books, put them in an array, and load either all, 2, or 1 of the books, dependant on the number of books on a shelf. 
 
-In Unity, the loading of the books worked fine, but when building and deploying on the HoloLens, the cursor is unable to click on a shelf to load the books on that shelf. I have been unable to fix this problem. It might have to do with the code that allows parameters to be passed, but it could also be a HoloLens issue.
+In Unity, the loading of the books worked fine, but when building and deploying on the HoloLens, the cursor is unable to click on a shelf to load the books on that shelf. As of yet I have been unable to fix this problem. It might have to do with the code that allows parameters to be passed, but it could also be a HoloLens issue regarding the switching of scenes.
 
 The plan would have been to be able to click on a book, and read it. Unfortunately, the reading part requires a seperate API, [Embedded Viewer API][6], which needs Javascript and only shows a preview, not the entire book. Since it requires Javascript, I decided to not use this API, and instead of reading, show more information about the book. Unfortunately I have not been able to get this far.
 
@@ -93,3 +97,4 @@ Stuff that can be added or improved to get this project working
 [10]: https://abhijitjana.net/2016/05/19/adding-a-gaze-input-cursor-to-your-unity-3d-holographic-app/
 [11]: https://docs.microsoft.com/en-us/windows/mixed-reality/holograms-101#chapter-3---gestures
 [12]: https://abhijitjana.net/2016/05/29/understanding-the-gesture-and-adding-air-tap-gesture-into-your-unity-3d-holographic-app/
+[13]: https://trello.com/b/HEx07kMI/ard-project
